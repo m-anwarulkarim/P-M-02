@@ -1,0 +1,5 @@
+1 . Why will I learn type script 
+2 . Install node.js using NVM
+3 . Install and run typescript
+4 . Primitive Types
+5 . Object , Literal & Optional Type
