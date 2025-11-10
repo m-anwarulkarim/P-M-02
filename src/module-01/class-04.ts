@@ -6,16 +6,16 @@ TypeScript এ “fixed number” নেই, কারণ নতুন নতু
 কিন্তু মূল ক্যাটেগরি অনুযায়ী ৮–১০টা বড় টাইপ গ্রুপ মনে রাখলেই পুরো TypeScript বুঝে ফেলা যায়।
 
 ✅ TypeScript এর প্রধান টাইপগুলো
-✅ 1. Primitive Types
+ 1. Primitive Types
 
 এসব হলো বেসিক টাইপ।
 string ,number ,boolean ,null ,undefined, symbol ,bigint
 
-✅ 2. Object Types
+ 2. Object Types
 
 object ,arrays ,functions ,classes
 
-✅ 3. Literal Types
+ 3. Literal Types
 
 "hello"
 
@@ -24,15 +24,15 @@ object ,arrays ,functions ,classes
 true
 (Exact value টাইপ হিসেবে ধরা হয়)
 
-✅ 4. Union Types
+ 4. Union Types
 
 string | number
 
-✅ 5. Intersection Types
+ 5. Intersection Types
 
 TypeA & TypeB
 
-✅ 6. Any, Unknown, Never
+ 6. Any, Unknown, Never
 
 any (সবকিছুই allowed)
 
@@ -40,27 +40,27 @@ unknown (safe any)
 
 never (কখনো return হয় না)
 
-✅ 7. Type Alias & Interface
+ 7. Type Alias & Interface
 
 type User = { ... }
 
 interface User { ... }
 
-✅ 8. Tuple Types
+ 8. Tuple Types
 
 [string, number]
 
-✅ 9. Enum Types
+ 9. Enum Types
 
 enum Role { User, Admin }
 
-✅ 10. Generics
+ 10. Generics
 
 Array<T>
 
 Promise<T>
 
-✅ সংক্ষেপে এক লাইন
+ সংক্ষেপে এক লাইন
 
 TypeScript এ primitive, object, literal, union, intersection, tuple, enum, generics, এবং special types (any, unknown, never) মিলিয়ে প্রায় ১০ ধরনের টাইপ গ্রুপ কাজে লাগে।
 

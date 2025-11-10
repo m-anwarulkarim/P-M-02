@@ -1,3 +1,5 @@
+// 1 . Non-Primitive Types , 2 . Readonly , 3 . Literal Type
+
 /*
 ✅ 1. Optional Property (Object এ)
 type User = {
@@ -16,7 +18,7 @@ const u2: User = {
 
 ✅ 2. Optional Function Parameter
 function greet(name: string, message?: string) {
-  // message দিলে এটা রান হবে
+  // message না দিলেও  এটা রান হবে
   if (message) {
     console.log(message);
   } else {
@@ -61,80 +63,6 @@ const user = {
 console.log(user?.address?.city);
 // যদি address না থাকে → undefined return করবে, error করবে না ✅
 
-✅ 6. Optional with Function Return
-function findUser(id: number): string | undefined {
-  if (id === 1) return "Anwar";
-  // অন্য id হলে কিছু পাবে না
-  return undefined;   // optional result
-}
-
-console.log(findUser(1)); // "Anwar"
-console.log(findUser(2)); // undefined
-
-✅ 7. Optional in API Response (Real-life Example)
-type ApiResponse = {
-  success: boolean;
-  data?: { id: number; name: string }; 
-  // data আসতেও পারে, নাও আসতে পারে
-};
-
-const res1: ApiResponse = {
-  success: true,
-  data: { id: 1, name: "Anwar" }
-};
-
-const res2: ApiResponse = {
-  success: false
-  // data নাই, তবুও valid ✅
-};
-
-✅ 8. Optional in Class
-class User {
-  name: string;
-  age?: number;   // optional class property
-
-  constructor(name: string, age?: number) {
-    this.name = name;
-    this.age = age;
-  }
-}
-
-const a = new User("Anwar");
-const b = new User("Anwar", 25);
-
-✅ 9. Optional with Tuple
-let userInfo: [string, number?];
-
-userInfo = ["Anwar"];       // age নাই
-userInfo = ["Anwar", 25];   // age আছে
-
-✅ 10. Optional + Default Value
-function say(msg?: string) {
-  const text = msg ?? "Default text";  
-  // msg না থাকলে default ব্যবহার করবে
-  console.log(text);
-}
-
-say();            // Default text
-say("Hi bro");    // Hi bro
-
-✅ 11. Optional + Union Type
-type Status = {
-  mode?: "online" | "offline" | "busy";
-};
-
-let s1: Status = {};                 // mode নাই
-let s2: Status = { mode: "online" }; // আছে
-
-✅ 12. Optional Index Signature
-type Dictionary = {
-  [key: string]: string | undefined; // optional values
-};
-
-const words: Dictionary = {
-  hello: "হ্যালো",
-  bye: undefined   // optional meaning
-};
 
 ✅ সংক্ষেপে, Optional কোথায় কোথায় ব্যবহার হয়?
 
@@ -169,7 +97,7 @@ type T = keyof typeof object;
 TypeScript এ readonly মানে হলো
 “এই প্রোপার্টি বা ভ্যালুটা পরিবর্তন করা যাবে না।”
 
-মানে তুমি সেটাকে শুধু read করতে পারো, কিন্তু rewrite/update করতে পারবে না।
+মানে  সেটাকে শুধু read করতে পারবো , কিন্তু rewrite/update করতে পারবে না।
 
 type User = {
   readonly id: number;   // এটা আর পরিবর্তন করা যাবে না

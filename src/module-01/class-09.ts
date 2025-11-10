@@ -20,7 +20,7 @@ const {
     phone: { primary },
   },
 } = user;
-// console.log(primary);
+// console.log(primary); akhane contact ar vitor theke phone , tar theke primary ke Destructur kora hoese
 
 const fruits = [" Apple", " Banana", " Grapes", " Watermelon", " Orange"];
 

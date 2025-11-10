@@ -1,0 +1,13 @@
+typescript
+PostgreSQL
+Node.js
+Express.js
+SQL
+Prisma ORM
+Next.js
+
+***********
+Golang
+Docker
+Cloud
+nginx

@@ -22,7 +22,8 @@ const scores: Numbers = [10, 20, 30];
 
 // ✅ Function Type Alias
 
-type AddFn = (a: number, b: number) => number;
+type AddFn = (a: number, b: number) => number; // ata type
+
 const add: AddFn = (a, b) => a + b;
 
 // ✅ Nested / Complex Type Alias
@@ -34,7 +35,7 @@ type Address = {
 
 type User = {
   name: string;
-  address: Address;
+  address: Address; // akhane add kora hoese
 };
 
 const u: User = {

@@ -9,15 +9,20 @@ Union মানে হলো
 
 Union symbol: | 
 
-✅ Union recap
+Union recap
 
-👉 Union মানে OR
-👉 যেকোনো এক ধরনের data allowed
-👉 ফ্লেক্সিবল টাইপ
+ Union মানে OR
+যেকোনো এক ধরনের data allowed
+
 
 */
+// ✅ simple Example 1 :
 
-// ✅ Example 2: Union with literal types
+type Student = number | string;
+const student: Student = "anwarul karim";
+// console.log(student)
+
+// ✅ Example 2 : Union with literal types
 type Status = "success" | "error" | "loading";
 
 let s: Status;
@@ -40,17 +45,17 @@ person = { name: "Anwar", role: "admin" }; // ✅
 /* ✅ Intersection Type (একাধিক টাইপকে একসাথে মিক্স করা)
 
 Intersection মানে হলো
-“এইটাই হবে, এর সাথে এটা, এর সাথে এটাও”
+“এইটাই হবে, এর সাথে  এটাও”
 অর্থাৎ সব টাইপের prop গুলো মিলিয়ে একটা নতুন টাইপ তৈরি হয়।
 
 Intersection symbol: &
 
-✅ Intersection recap
+ Intersection recap
 
-👉 Intersection মানে AND
-👉 সব টাইপকে একত্রে মিক্স করে
-👉 নতুন টাইপ তৈরি করে
-👉 আরও strict টাইপ সিস্টেম
+ Intersection মানে AND
+ সব টাইপকে একত্রে মিক্স করে
+ নতুন টাইপ তৈরি করে
+
 */
 
 // ✅ Example 2: Intersection with required fields
@@ -63,9 +68,3 @@ const a: Admin = {
   name: "Siam",
   isAdmin: true,
 };
-
-// ✅ Example 3: Intersection tricky case
-type X = { type: "a" };
-type Y = { type: "b" };
-
-type Z = X & Y;

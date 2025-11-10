@@ -6,11 +6,11 @@ function addNormal(a: number, b: number): number /* ata holo return type*/ {
   return a + b;
 }
 
-//  arrow function
+// 2. arrow function
 
 const addArrow = (a: number, b: number): number => a + b;
 
-//  obj => function => mathod
+// 3. obj => function => mathod ।। মানে object  এর ভিতরের function
 
 const obj = {
   balanse: 0,
@@ -22,7 +22,7 @@ const obj = {
 
 // console.log(obj.add(5));
 
-// Callback Function Type
+//4. Callback Function Type
 const arry: number[] = [1, 2, 3, 4, 5, 6, 8, 9, 0];
 
 const arr = arry.map((value: number) => {

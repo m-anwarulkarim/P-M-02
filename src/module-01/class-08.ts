@@ -1,4 +1,7 @@
 // Rest & Spread Operator
+// rest and spread যদি না যানা থাকে তাহলে  spreadRest.ts ফাইল থেকে বুঝা যেতে পারে
+
+/*Rest operator দিয়ে  একাধিক value কে একটা array তে সংগ্রহ করা যায়।*/
 
 //1. Spread array
 const user1: string[] = ["anwaerul  ", "karim ", "abir "];
@@ -26,7 +29,11 @@ const userInfo = { ...obj1, ...obj2 };
 
 // spread Operator
 
+/*Spread operator ঠিক উল্টো কাজ করে —
+এটা একটা array বা object কে আলাদা আলাদা value তে “ছড়িয়ে দেয়”। */
+
 const spread = (...freand: string[]) => {
   console.log(freand);
 };
-spread("hello", " i'm", " anwarul", "karim");
+const result = spread("hello", " i'm", " anwarul", "karim");
+console.log(result);

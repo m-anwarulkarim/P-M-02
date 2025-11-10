@@ -18,8 +18,7 @@
 | 10  | ⏳ **Type Alias**                                              |
 | 11  | ⏳ **Union & intersection types**                              |
 | 12  | ⏳ **ternary, nullish coalescing & optional chaining**         |
-| 13  | ⏳ _(Coming Soon)_                                             |
-| 14  | ⏳ _(Coming Soon)_                                             |
+| 13  | ⏳ **nullable, unknown & never type , typrOf**                 |
 
 ---
 

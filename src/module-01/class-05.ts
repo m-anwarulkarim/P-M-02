@@ -13,7 +13,13 @@ let numbers: number[] = [1, 2, 3];
 
 Object – key-value pair হিসেবে ডেটা স্টোর করার জন্য।
 
-let person: {name: string, age: number} = {name: "Anwar", age: 25};
+let person: {
+name: string, 
+age: number
+} = {
+ name: "Anwar",
+  age: 25
+ };
 
 
 Function – ফাংশনও একটি reference type।
