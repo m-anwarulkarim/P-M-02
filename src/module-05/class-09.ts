@@ -33,4 +33,4 @@ const students = [
   ["Rafi", [92, 89, 94]],
 ];
 const [, Samiul] = students;
-console.log(Samiul);
+// console.log(Samiul);

@@ -48,7 +48,7 @@ interface User { ... }
 
  8. Tuple Types
 
-[string, number]
+const student : [string, number] = ["anwar", 100]
 
  9. Enum Types
 

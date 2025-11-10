@@ -1,6 +1,5 @@
-// 1 . Non-Primitive Types , 2 . Readonly , 3 . Literal Type
+/* // object  1 . Optional , 2 . Readonly , 3 . Literal Type
 
-/*
 ✅ 1. Optional Property (Object এ)
 type User = {
   name: string;      // বাধ্যতামূলক
@@ -78,7 +77,7 @@ console.log(user?.address?.city);
 
 */
 
-// **********************************
+// *********************************************************************************************
 // Literal Type: value দিয়েই টাইপ তৈরি করা
 
 /*✅ 1. সরাসরি literal দিয়ে টাইপ বানানো
@@ -92,6 +91,7 @@ type T = typeof array[number];
 type T = keyof typeof object;
 */
 
+// *************************************************************************************************
 /* ✅ Readonly কী?
 
 TypeScript এ readonly মানে হলো

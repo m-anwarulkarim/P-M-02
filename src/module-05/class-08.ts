@@ -6,12 +6,14 @@
 //1. Spread array
 const user1: string[] = ["anwaerul  ", "karim ", "abir "];
 
-const user2: string[] = ["fatema ", "sultana ", "aisha"];
+const user2: string[] = ["fatema ", "sultana ", "aisha", "a"]; //🔏
 
-user1.push(...user2);
+const res = [...user1, ...user2];
+console.log(res);
+
 // console.log(user1);
 
-//  2. Spread object
+//  2. Rest object
 
 const obj1 = {
   hoby: "reding book",

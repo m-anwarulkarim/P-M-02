@@ -1,4 +1,4 @@
-/*✅ 1. Ternary Operator
+/*✅ 1. Ternary Operator  2. Nullish Coalescing  3. Optional Chaining
 
 এটা basically ছোট if else shortcut.
 
