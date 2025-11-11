@@ -1,115 +1,130 @@
-/* // object  1 . Optional , 2 . Readonly , 3 . Literal Type
+// =====================================================
+// Object: Optional, Readonly, Literal Type
+// =====================================================
 
-✅ 1. Optional Property (Object এ)
+/* =====================================================
+1️⃣ Optional Property
+------------------------------------------------------
+Object এ কোনো property optional হলে ? দিয়ে দেখানো হয়
+*/
+
 type User = {
-  name: string;      // বাধ্যতামূলক
-  age?: number;      // optional property
+  name: string; // বাধ্যতামূলক
+  age?: number; // optional
 };
 
-const u1: User = { 
-  name: "Anwar"      // age নাই, তবুও valid ✅
+const u1: User = {
+  name: "Anwar", // age না থাকলেও valid ✅
 };
 
-const u2: User = { 
+const u2: User = {
   name: "Anwar",
-  age: 25            // age দিলেও valid ✅
+  age: 25, // age থাকলেও valid ✅
 };
 
-✅ 2. Optional Function Parameter
+/* =====================================================
+2️⃣ Optional Function Parameter
+------------------------------------------------------
+Function parameter optional হলে ? দিয়ে ব্যবহার করা যায়
+*/
+
 function greet(name: string, message?: string) {
-  // message না দিলেও  এটা রান হবে
   if (message) {
     console.log(message);
   } else {
-    // না দিলে fallback message
-    console.log("Hello!");
+    console.log("Hello!"); // fallback
   }
 }
 
-greet("Anwar");              // ✅ message ছাড়া
-greet("Anwar", "Hi bro!");   // ✅ message সহ
+greet("Anwar"); // message ছাড়া ✅
+greet("Anwar", "Hi bro!"); // message সহ ✅
 
-✅ 3. Optional আসলে কী ⇢ internally | undefined
-type User = {
-  age?: number;   
-  // এর আসল রূপ:
-  // age: number | undefined;
-};
+/* =====================================================
+3️⃣ Optional এর আসল অর্থ
+------------------------------------------------------
+Optional internally:
+age?: number  ===  age: number | undefined
+*/
 
+/* =====================================================
+4️⃣ Optional in Destructuring
+------------------------------------------------------
+Destructuring এর মধ্যে optional property handle করা যায়
+*/
 
-মানে age দেওয়া লাগবে না, দিলে অবশ্যই number হতে হবে।
-
-✅ 4. Optional in Destructuring
 function showUser({ name, nickName }: { name: string; nickName?: string }) {
   console.log("Name:", name);
-
-  // nickName undefined হলে fallback দেখাবে
-  console.log("Nick:", nickName ?? "No nickname");
+  console.log("Nick:", nickName ?? "No nickname"); // fallback
 }
 
-showUser({ name: "Anwar" });                 // ✅ nickName নাই
+showUser({ name: "Anwar" }); // ✅ nickName নাই
 showUser({ name: "Anwar", nickName: "AK" }); // ✅ nickName আছে
 
-✅ 5. Optional Chaining (?.)
-const user = {
+/* =====================================================
+5️⃣ Optional Chaining (?.)
+------------------------------------------------------
+Nested object property access এ error এড়াতে ব্যবহার হয়
+*/
+
+const userObj = {
   name: "Anwar",
   address: {
-    city: "Dhaka"
-  }
+    city: "Dhaka",
+  },
 };
 
-// user.address আছে কিনা জানি না
-console.log(user?.address?.city);
-// যদি address না থাকে → undefined return করবে, error করবে না ✅
+console.log(userObj?.address?.city); // Dhaka
+// যদি address না থাকে → undefined return করবে, error হবে না ✅
 
-
-✅ সংক্ষেপে, Optional কোথায় কোথায় ব্যবহার হয়?
-
-✅ object property
-✅ function parameter
-✅ class property
-✅ tuple
-✅ destructuring
-✅ API response
-✅ optional chaining
-✅ union এর সাথে
-✅ default value এর সাথে
-
+/* =====================================================
+✅ Optional কোথায় ব্যবহার হয়?
+------------------------------------------------------
+- object property
+- function parameter
+- class property
+- tuple
+- destructuring
+- API response
+- optional chaining
+- union type
+- default value
 */
 
-// *********************************************************************************************
-// Literal Type: value দিয়েই টাইপ তৈরি করা
-
-/*✅ 1. সরাসরি literal দিয়ে টাইপ বানানো
-type D = "left" | "right";
-
-✅ 2. typeof দিয়ে value → type
-type T = typeof value;
-
-✅ 3. array/object থেকে type বানানো (const assertion সহ)
-type T = typeof array[number];
-type T = keyof typeof object;
+/* =====================================================
+Literal Type
+------------------------------------------------------
+প্রতিটি value দিয়েই টাইপ তৈরি করা যায়
 */
 
-// *************************************************************************************************
-/* ✅ Readonly কী?
+// 1️⃣ সরাসরি literal দিয়ে type
+type Direction = "left" | "right";
 
-TypeScript এ readonly মানে হলো
-“এই প্রোপার্টি বা ভ্যালুটা পরিবর্তন করা যাবে না।”
+// 2️⃣ typeof দিয়ে variable value → type
+const value = "hello";
+type ValueType = typeof value;
 
-মানে  সেটাকে শুধু read করতে পারবো , কিন্তু rewrite/update করতে পারবে না।
+// 3️⃣ array/object থেকে type বানানো (const assertion)
+const fruits = ["apple", "banana"] as const;
+type Fruit = (typeof fruits)[number];
 
-type User = {
-  readonly id: number;   // এটা আর পরিবর্তন করা যাবে না
+const obj = { name: "Anwar", age: 22 } as const;
+type ObjKeys = keyof typeof obj; // "name" | "age"
+
+/* =====================================================
+Readonly Property
+------------------------------------------------------
+Readonly মানে property পরিবর্তন করা যাবে না
+*/
+
+type UserReadOnly = {
+  readonly id: number; // পরিবর্তন করা যাবে না
   name: string;
 };
 
-const user: User = {
+const readonlyUser: UserReadOnly = {
   id: 101,
-  name: "Anwar"
+  name: "Anwar",
 };
 
-user.name = "Karim";      // ✅ OK
-user.id = 202;            // ❌ Error: Cannot assign to 'id' because it is a read-only property.
-
-*/
+readonlyUser.name = "Karim"; // ✅ OK
+// readonlyUser.id = 202;     // ❌ Error: Cannot assign to 'id' because it is read-only

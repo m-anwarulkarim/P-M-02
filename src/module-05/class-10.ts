@@ -1,9 +1,13 @@
-// 1. Type Alias
+// =====================================================
+// 1️⃣ Type Alias
+// =====================================================
 
-//  TypeScript এ type alias মানে হলো
-// একটা টাইপকে নিজের মতো করে একটা নতুন নাম দেওয়া।
+/* 
+TypeScript এ Type Alias মানে হলো
+একটা টাইপকে নিজের মতো করে নতুন নাম দিয়ে ব্যবহার করা। 
+*/
 
-// ✅ Object এর Type Alias
+/* ================= Example 1: Object Type Alias ================= */
 type User1 = {
   name: string;
   age: number;
@@ -16,18 +20,16 @@ const user1: User1 = {
   isAdmin: true,
 };
 
-// ✅ Array এর Type Alias
+/* ================= Example 2: Array Type Alias ================= */
 type Numbers = number[];
 const scores: Numbers = [10, 20, 30];
 
-// ✅ Function Type Alias
-
-type AddFn = (a: number, b: number) => number; // ata type
+/* ================= Example 3: Function Type Alias ================= */
+type AddFn = (a: number, b: number) => number;
 
 const add: AddFn = (a, b) => a + b;
 
-// ✅ Nested / Complex Type Alias
-
+/* ================= Example 4: Nested / Complex Type Alias ================= */
 type Address = {
   city: string;
   zip: number;
@@ -35,7 +37,7 @@ type Address = {
 
 type User = {
   name: string;
-  address: Address; // akhane add kora hoese
+  address: Address; // Nested type
 };
 
 const u: User = {

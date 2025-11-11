@@ -1,87 +1,72 @@
-/*✅ 1. Ternary Operator  2. Nullish Coalescing  3. Optional Chaining
+// =====================================================
+//  1️. Ternary Operator
+//  2️. Nullish Coalescing (??)
+//  3️. Optional Chaining (?.)
+// =====================================================
 
-এটা basically ছোট if else shortcut.
+/* =====================================================
+1️. Ternary Operator
+------------------------------------------------------
+ছোট if-else shortcut। 
 
 Format:
-
 condition ? true হলে যা হবে : false হলে যা হবে
+*/
 
-✅ Example 1: simple ternary
+/* ================= Example 1: Simple Ternary ================= */
 const age = 20;
 const msg = age >= 18 ? "Adult" : "Child";
-
 console.log(msg); // Adult
 
-✅ Example 2: nested ternary (avoid if possible)
+/* ================= Example 2: Nested Ternary (Avoid if possible) ================= */
 const mark = 85;
+const grade = mark >= 80 ? "A+" : mark >= 70 ? "A" : mark >= 60 ? "B" : "F";
 
-const grade =
-  mark >= 80 ? "A+" :
-  mark >= 70 ? "A"  :
-  mark >= 60 ? "B"  :
-  "F";
+console.log(grade); // A+
 
-console.log(grade);
+/* =====================================================
+2️. Nullish Coalescing (??)
+------------------------------------------------------
+Default value operator। 
+শুধুমাত্র তখনই fallback দিবে যখন value null বা undefined হবে।
+Falsy values (0, "", false) এ কাজ করবে না।
+*/
 
-// *******************************************************
+/* ================= Example ================= */
+let name: string | null = null;
+console.log(name ?? "Guest"); // Guest
 
-✅ Nullish Coalescing (??) কি?
+/* =====================================================
+3. Optional Chaining (?.)
+------------------------------------------------------
+Nested property access করার সময় যদি কিছু undefined হয়, 
+error ছাড়াই undefined return করবে।
+*/
 
-এটা একটি default value দেওয়ার operator, কিন্তু খুব স্পেসিফিকভাবে কাজ করে।
-
-এটা কেবল তখনই default value ব্যবহার করবে যখন ভ্যারিয়েবলটি null বা undefined হবে।
- অন্য কোন falsy value (0, "", false) দেখলেই fallback নেবে না।
-
-✅ Formula
-value ?? defaultValue
-
-
-Meaning:
-value যদি null বা undefined হয় তাহলে defaultValue নেবে।
-
-let name = null;
-console.log(name ?? "Guest");
-
-***************************************************
-
-
-✅ 3. Optional Chaining (?.)
-
-যখন কোনো object এর nested property access করতে চাই
-কোনো কিছু undefined হলে error না দিয়ে 'undefined' রিটার্ন করবে।
-
-Format:
-
-obj?.prop
-obj?.prop?.subProp
-func?.()
-
-✅ Example 1:
+/* ================= Example 1: Object ================= */
 const user = {
   name: "Anwar",
   address: {
-    city: "Dhaka"
-  }
+    city: "Dhaka",
+  },
 };
 
 console.log(user.address?.city); // Dhaka
-console.log(user.contact?.email); // undefined (no error)
+// console.log(user.contact?.email); // undefined (no error)
 
-✅ Example 2: optional chaining with function
+/* ================= Example 2: Function ================= */
 const obj = {
   sayHi() {
     return "Hello";
-  }
+  },
 };
 
 console.log(obj.sayHi?.()); // Hello
-console.log(obj.sayBye?.()); // undefined
+// console.log(obj.sayBye?.()); // undefined
 
-✅ Example 3: optional chaining in array
+/* ================= Example 3: Array ================= */
 const data = {
-  items: null
+  items: null,
 };
 
 console.log(data.items?.[0]); // undefined (no error)
-
-*/

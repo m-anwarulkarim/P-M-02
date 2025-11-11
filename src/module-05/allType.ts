@@ -1,67 +1,70 @@
+// =====================================================
+// ✅ TypeScript এ কত ধরনের টাইপ আছে?
+// =====================================================
+
 /*
+TypeScript এ fixed number নেই, কারণ নতুন নতুন টাইপ ফিচার যোগ হয়। 
+কিন্তু মূল ক্যাটেগরি অনুযায়ী ৮–১০টা বড় টাইপ গ্রুপ মনে রাখলেই পুরো TypeScript বোঝা যায়।
 
-✅ TypeScript এ মোট কত ধরনের টাইপ আছে?
+TypeScript এর প্রধান টাইপগুলো:
 
-TypeScript এ “fixed number” নেই, কারণ নতুন নতুন টাইপ ফিচার যোগ হয়।
-কিন্তু মূল ক্যাটেগরি অনুযায়ী ৮–১০টা বড় টাইপ গ্রুপ মনে রাখলেই পুরো TypeScript বুঝে ফেলা যায়।
+1️. Primitive Types
+------------------------------------------------------
+বেসিক টাইপ:
+string, number, boolean, null, undefined, symbol, bigint
 
-✅ TypeScript এর প্রধান টাইপগুলো
- 1. Primitive Types
+2️. Object Types
+------------------------------------------------------
+object, arrays, functions, classes
 
-এসব হলো বেসিক টাইপ।
-string ,number ,boolean ,null ,undefined, symbol ,bigint
-
- 2. Object Types
-
-object ,arrays ,functions ,classes
-
- 3. Literal Types
-
+3️. Literal Types
+------------------------------------------------------
+Exact value টাইপ হিসেবে ধরা হয়
+উদাহরণ:
 "hello"
-
 42
-
 true
-(Exact value টাইপ হিসেবে ধরা হয়)
 
- 4. Union Types
+4️. Union Types
+------------------------------------------------------
+একাধিক টাইপের মধ্যে যেকোনো একটি value নিতে পারে
+উদাহরণ: string | number
 
-string | number
+5️. Intersection Types
+------------------------------------------------------
+একাধিক টাইপ একত্রিত করে নতুন টাইপ তৈরি করে
+উদাহরণ: TypeA & TypeB
 
- 5. Intersection Types
+6️. Any, Unknown, Never
+------------------------------------------------------
+any → সবকিছুই allowed
+unknown → safe any
+never → কখনো return হয় না
 
-TypeA & TypeB
-
- 6. Any, Unknown, Never
-
-any (সবকিছুই allowed)
-
-unknown (safe any)
-
-never (কখনো return হয় না)
-
- 7. Type Alias & Interface
-
+7️. Type Alias & Interface
+------------------------------------------------------
 type User = { ... }
-
 interface User { ... }
 
- 8. Tuple Types
+8️. Tuple Types
+------------------------------------------------------
+Fixed length array যেখানে প্রত্যেক element এর type নির্দিষ্ট
+উদাহরণ:
+const student: [string, number] = ["Anwar", 100]
 
-const student : [string, number] = ["anwar", 100]
-
- 9. Enum Types
-
+9️. Enum Types
+------------------------------------------------------
+Predefined set of named constants
+উদাহরণ:
 enum Role { User, Admin }
 
- 10. Generics
-
+10. Generics
+------------------------------------------------------
+Reusable type template
+উদাহরণ:
 Array<T>
-
 Promise<T>
 
- সংক্ষেপে এক লাইন
-
+সংক্ষেপে:
 TypeScript এ primitive, object, literal, union, intersection, tuple, enum, generics, এবং special types (any, unknown, never) মিলিয়ে প্রায় ১০ ধরনের টাইপ গ্রুপ কাজে লাগে।
-
 */

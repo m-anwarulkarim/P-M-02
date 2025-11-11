@@ -1,23 +1,27 @@
-//1. Type Assertion
+// =====================================================
+// 1. Type Assertion
+// =====================================================
 
-/*✅ Type Assertion ki?
+/* 
+✅ Type Assertion কি?
 
-TypeScript mainly বলছে:
-"ভাই, আমি এই ভ্যারিয়েবলের টাইপটা ঠিক বুঝতে পারছি না, তুমি যদি নিশ্চিত হও তাহলে আমাকে বলে দাও এটা আসলে কোন টাইপ।"
+TypeScript কে বলা হয় যে, "আমি এই ভ্যারিয়েবলের টাইপ জানি। তুমি চিন্তা কোরো না।"
 
-Type Assertion মানে তুমি TypeScript-কে বলছো
-“এই ভ্যালুর আসল টাইপ আমি জানি, তুমি দুশ্চিন্তা করো না।”
+Type Assertion ব্যবহার করলে TypeScript বিশ্বাস করে যে value আসলে যে type বলেছি সেটাই।
+*/
 
-✅Basic Example
+/* ================= Basic Example ================= */
 
 let data: any = "Hello";
 
 let length = (data as string).length;
 
-এখানে
-data এর টাইপ any, তাই TS জানে না এটা string কিনা।
-তাকে বলা হলো: (data as string)
-TypeScript শান্ত হয়ে বিশ্বাস করলো। */
+/* 
+data এর টাইপ any, তাই TS জানে না এটি string কিনা।
+(data as string) দিয়ে TypeScript কে বলা হলো, এটা string।
+*/
+
+/* ================= Function Example ================= */
 
 const checkStudentInfo = (value: any): any => {
   if (typeof value === "string") {
@@ -31,30 +35,23 @@ const checkStudentInfo = (value: any): any => {
   }
 };
 
-// Example calls
 checkStudentInfo("Anwarul");
 console.log(checkStudentInfo(85));
 
-/*
-***************************
-✅ Wrong Assertion করলে?
+/* ================= Wrong Assertion ================= */
 
-TypeScript বিশ্বাস করে ফেলে…
-কিন্তু runtime এ error মারবে।
+/* 
+TypeScript বিশ্বাস করে, কিন্তু runtime এ error আসতে পারে
+*/
 
 let value: any = 123;
 
-console.log((value as string).toUpperCase()); // Runtime এ crash করবে
+// console.log((value as string).toUpperCase()); // Runtime error
 
+/* ================= কখন ব্যবহার করবেন ================= */
 
-✅ কবে ব্যবহার করা উচিত?
-
-Type Assertion use করো যখন:
-
-তুমি আসল টাইপ নিশ্চিত।
-
-TypeScript ভুল বুঝে টাইপ infer করেছে।
-
-DOM বা third-party data নিয়ে কাজ করছো।
-
-API response dynamically আসে। */
+/*
+1. আমি আসল টাইপ নিশ্চিত
+2. TypeScript ভুল বুঝে টাইপ infer করেছে
+3. DOM বা third-party data নিয়ে কাজ করা (API response dynamically আসে)
+*/

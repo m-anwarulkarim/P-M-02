@@ -1,64 +1,48 @@
-//  1.Union type,  2 .Intersection type
+// =====================================================
+//  1️. Union Type
+//  2️. Intersection Type
+// =====================================================
 
-/*✅ Union Type 
-(একাধিক টাইপের মধ্যে যেকোনো একটা)
-
-Union মানে হলো
-“এটা এটা বা এটা”
-অর্থাৎ value একটা টাইপের মধ্যে যেকোনো একটিই হতে পারবে।
-
-Union symbol: | 
-
-Union recap
-
- Union মানে OR
-যেকোনো এক ধরনের data allowed
-
-
+/* =====================================================
+1️. Union Type
+------------------------------------------------------
+একাধিক টাইপের মধ্যে যেকোনো একটিকে value হিসেবে নিতে পারে।
+Union মানে "OR" 
+Symbol: |
 */
-// ✅ simple Example 1 :
 
+/* ================= Example 1: Simple Union ================= */
 type Student = number | string;
 const student: Student = "anwarul karim";
 // console.log(student)
 
-// ✅ Example 2 : Union with literal types
+/* ================= Example 2: Union with Literal Types ================= */
 type Status = "success" | "error" | "loading";
 
 let s: Status;
-s = "loading"; // ✅
-s = "error"; // ✅
-// s = "fail";      // ❌ not allowed
+s = "loading"; // ✅ allowed
+s = "error"; // ✅ allowed
+// s = "fail";  // ❌ not allowed
 
-// ✅ Example 3: Union with objects
+/* ================= Example 3: Union with Objects ================= */
 type UserObj = { name: string };
 type AdminObj = { name: string; role: "admin" };
 
 let person: UserObj | AdminObj;
 
-person = { name: "Anwar" }; // ✅
-person = { name: "Anwar", role: "admin" }; // ✅
-// person = { role: "admin" };                 // ❌
+person = { name: "Anwar" }; // ✅ allowed
+person = { name: "Anwar", role: "admin" }; // ✅ allowed
+// person = { role: "admin" }; // ❌ not allowed
 
-// **********************************************
-
-/* ✅ Intersection Type (একাধিক টাইপকে একসাথে মিক্স করা)
-
-Intersection মানে হলো
-“এইটাই হবে, এর সাথে  এটাও”
-অর্থাৎ সব টাইপের prop গুলো মিলিয়ে একটা নতুন টাইপ তৈরি হয়।
-
-Intersection symbol: &
-
- Intersection recap
-
- Intersection মানে AND
- সব টাইপকে একত্রে মিক্স করে
- নতুন টাইপ তৈরি করে
-
+/* =====================================================
+2️. Intersection Type
+------------------------------------------------------
+একাধিক টাইপকে একসাথে মিক্স করে নতুন টাইপ তৈরি করা হয়।
+Intersection মানে "AND" 
+Symbol: &
 */
 
-// ✅ Example 2: Intersection with required fields
+/* ================= Example 1: Intersection with Required Fields ================= */
 type User = { name: string };
 type AdminInfo = { isAdmin: boolean };
 
