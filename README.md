@@ -41,12 +41,12 @@
 | 05  | 🔏 **Generics with function**                 |
 | 06  | 🔏 **Constraint**                             |
 | 07  | 🔏 **keyof and keyof Constraint**             |
-| 08  | 🔏 **coming soon...**                         |
-| 09  | 🔏 **coming soon...**                         |
-| 10  | 🔏 **Tcoming soon...**                        |
-| 11  | 🔏 **coming soon...**                         |
-| 12  | 🔏 **coming soon...**                         |
-| 13  | 🔏 **coming soon...**                         |
+| 08  | 🔏 **Enum in TypeScript**                     |
+| 09  | 🔏 **as const instead of enum**               |
+| 10  | 🔏 **conditional type**                       |
+| 11  | 🔏 **mapped types**                           |
+| 12  | 🔏 **Utility types**                          |
+| 13  | 🔏 **Module summary**                         |
 
 ## Overview
 

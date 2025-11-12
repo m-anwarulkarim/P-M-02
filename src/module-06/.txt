@@ -5,8 +5,8 @@
 5. Generics with function
 6. Constraint
 7. keyof and keyof Constraint
-8.
-9. 
+8. Enum
+9. as const
 10. 
 11.
 12.
