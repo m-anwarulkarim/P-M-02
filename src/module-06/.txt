@@ -3,8 +3,8 @@
 3 . Generic
 4. GENERIC with INTERFACE 
 5. Generics with function
-6. 
-7.
+6. Constraint
+7. keyof and keyof Constraint
 8.
 9. 
 10. 
