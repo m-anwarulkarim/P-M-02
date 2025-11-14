@@ -63,7 +63,7 @@
 | 01  | 🔏 **Class & Object in TypeScript** |
 | 02  | 🔏 **Inheritance**                  |
 | 03  | 🔏 **Type Guard in TypeScript**     |
-| 04  | 🔏 **caming soon...**               |
+| 04  | 🔏 **Type guard using instance of** |
 | 05  | 🔏 **caming soon...**               |
 | 06  | 🔏 **caming soon...**               |
 | 07  | 🔏 **caming soon...**               |
