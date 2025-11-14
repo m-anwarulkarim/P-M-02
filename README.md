@@ -61,8 +61,8 @@
 | No. | Topic                               |
 | --- | ----------------------------------- |
 | 01  | 🔏 **Class & Object in TypeScript** |
-| 02  | 🔏 **caming soon...**               |
-| 03  | 🔏 **caming soon...**               |
+| 02  | 🔏 **Inheritance**                  |
+| 03  | 🔏 **Type Guard in TypeScript**     |
 | 04  | 🔏 **caming soon...**               |
 | 05  | 🔏 **caming soon...**               |
 | 06  | 🔏 **caming soon...**               |
