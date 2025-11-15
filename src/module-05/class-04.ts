@@ -90,6 +90,17 @@ const arr2 = [21, 32, 12, [12, 12]];
 const [, , , nested] = arr2;
 console.log(nested); // [12,12]
 
+const data: [number, [number, number], [number, [number, number]]] = [
+  1,
+  [2, 3],
+  [4, [5, 6]],
+];
+
+const [x, [y, z], [pVal, [q, r]]] = data;
+
+console.log(x, y, z); // 1 2 3
+console.log(pVal, q, r); // 4 5 6
+
 /* =====================================================
 7️⃣ Union (String | Number)
 ------------------------------------------------------
