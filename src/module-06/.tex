@@ -1,0 +1,13 @@
+**********ANCHOR -     keyof Constraint —  class-07   
+
+1.  keyof Constraint 
+
+const getPropertyFromObj = <T, K extends keyof T>(obj: T, key: K): T[K] => {
+  return obj[key];
+};
+
+// ✅ ব্যবহার
+const userName = getPropertyFromObj(user, "name"); // string
+const userAddress = getPropertyFromObj(user, "address"); // { city: string }
+
+**********ANCHOR - as const ==> class-09
