@@ -3,13 +3,14 @@
 // =====================================================
 
 /* ================= Nullable Type ================= */
-// কোন ভ্যারিয়েবল null বা undefined হতে পারে
+// ? কোন ভ্যারিয়েবল null বা undefined হতে পারে
 let nullableValue: string | null = "Hello";
 nullableValue = null; // ✅ valid
 // nullableValue = 42; // ❌ invalid, string বা null ছাড়া অন্য type নেওয়া যাবে না
 
 /* ================= Unknown Type ================= */
-// unknown হলো safe any, কোন value হতে পারে কিন্তু আগে check করা দরকার
+// ? unknown হলো safe any
+// ? কোন value হতে পারে কিন্তু আগে type check করা দরকার
 let value: unknown;
 
 value = 10;
@@ -21,7 +22,7 @@ if (typeof value === "string") {
 }
 
 /* ================= Never Type ================= */
-// কখনো return হবে না এমন function
+// ! কখনো return হবে না এমন function
 function throwError(message: string): never {
   throw new Error(message);
 }
@@ -29,7 +30,34 @@ function throwError(message: string): never {
 // throwError("Something went wrong"); // Program stops here
 
 /* ================= typeof Operator ================= */
-// Variable বা expression এর type runtime এ check করার জন্য
+/* 
+? typeof = “এই data আসলে কোন টাইপের?” তা জানার যন্ত্র।
+
+console.log(typeof 20); // Output → "number"
+// মানে: ২০ number type ডাটা
+
+TODO: typeof সবসময় “string” রিটার্ন করে যে type-ই হোক না কেন—number, string, boolean
+
+* * TypeScript এ typeof দিয়ে type extract করা যায়
+* উদাহরণ:
+*/
+const person = {
+  name: "Anwar",
+  age: 22,
+};
+
+// type PersonType = { name: string; age: number }
+type PersonType = typeof person;
+
+// {
+//   name: string;
+//   age: number;
+// }
+
+// ✔ object থেকে type বের করা হলো
+// ✔ নতুন করে type declare করতে হলো না
+
+// ================= Runtime typeof =================
 const a = "hello";
 const b = 42;
 const c = true;
